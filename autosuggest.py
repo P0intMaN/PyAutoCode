@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
+ACCESS_TOKEN = os.getenv("GITHUB_ACCESS_TOKEN")
 
-GITHUB_ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
-print(GITHUB_ACCESS_TOKEN)
+g = Github(ACCESS_TOKEN)
+
