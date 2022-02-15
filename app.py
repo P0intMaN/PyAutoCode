@@ -1,3 +1,5 @@
 from PyAutoCode import ACCESS_TOKEN
+from github import Github
 
-print(ACCESS_TOKEN)
+g = Github(ACCESS_TOKEN)
+
