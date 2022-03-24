@@ -1,13 +1,13 @@
 # An attempt to create a tokenizer-cum-pretrainer from scratch
 import os, time
-from sty import fg, rs
+from sty import fg, bg, rs
 
 # globals
 MAX_CHAR_LENGTH = 512
 MIN_CHAR_LENGTH = 400
 
 # decoy newline char to encode newlines in python
-NEWLINECHAR = "<N>"
+NEWLINECHAR = "<$N$>"
 
 walk_dir = './resources/repos'
 full_paths = []
@@ -16,12 +16,18 @@ for dirpath, dirnames, filenames in os.walk(walk_dir):
         full_path = os.path.join(dirpath, f)
         full_paths.append(full_path)
 
-print(len(full_paths))
+print(f'{fg.green}Total paths: {len(full_paths)}{fg.rs}\n')
 
+print(f'{fg.cyan}Original code sample from:{fg.rs}', end='')
 for fpath in full_paths:
     data = open(fpath, "r", encoding="utf-8").read()
     if len(data) > 60 and len(data) <= MAX_CHAR_LENGTH:
-        print(f"{data}: len {len(data)}")
+        print(f'{fg.cyan} {fpath} {fg.rs}')
+        print(f"{bg.grey}{fg.black} {data} {fg.rs}{bg.rs}")
+        print(f'{fg.cyan}Total char length: {len(data)} {fg.rs}')
+
         formatted_data = data.replace("\n", NEWLINECHAR)
-        print(f"{formatted_data}: len {len(formatted_data)}")
+        print(f'\n{fg.yellow}Pre-processed Data:{fg.rs}')
+        print(f"{bg.li_blue}{fg.black} {formatted_data} {bg.rs}{fg.rs}")
+        print(f'{fg.yellow}Total char length: {len(formatted_data)} {fg.rs}')
         break
