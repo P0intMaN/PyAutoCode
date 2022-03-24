@@ -1,5 +1,5 @@
 # An attempt to create a tokenizer-cum-pretrainer from scratch
-import os, time
+import os
 from sty import fg, bg, rs
 
 # globals
@@ -16,18 +16,30 @@ for dirpath, dirnames, filenames in os.walk(walk_dir):
         full_path = os.path.join(dirpath, f)
         full_paths.append(full_path)
 
-print(f'{fg.green}Total paths: {len(full_paths)}{fg.rs}\n')
+# Write the formatted data to a file to create a custom dataset.
+exception_hits = 0
+with open('python_code_dataset.txt', 'a', encoding='utf-8') as f:
+    for fpath in full_paths:
+        try:
+            data = open(fpath, "r", encoding="utf-8").read()
+            formatted_data = data.replace("\n", NEWLINECHAR)
 
-print(f'{fg.cyan}Original code sample from:{fg.rs}', end='')
-for fpath in full_paths:
-    data = open(fpath, "r", encoding="utf-8").read()
-    if len(data) > 60 and len(data) <= MAX_CHAR_LENGTH:
-        print(f'{fg.cyan} {fpath} {fg.rs}')
-        print(f"{bg.grey}{fg.black} {data} {fg.rs}{bg.rs}")
-        print(f'{fg.cyan}Total char length: {len(data)} {fg.rs}')
+            print(f"{fg.yellow} Data from {fpath} {fg.rs}")
+            if len(data) > 100 and len(data) <= MAX_CHAR_LENGTH:
+                f.write(formatted_data+'\n')
+                
 
-        formatted_data = data.replace("\n", NEWLINECHAR)
-        print(f'\n{fg.yellow}Pre-processed Data:{fg.rs}')
-        print(f"{bg.li_blue}{fg.black} {formatted_data} {bg.rs}{fg.rs}")
-        print(f'{fg.yellow}Total char length: {len(formatted_data)} {fg.rs}')
-        break
+            else:
+                split_data = formatted_data.split(f'{NEWLINECHAR}{NEWLINECHAR}')
+                buffer = ""
+        
+                print(f"{fg.yellow} Data from {fpath} {fg.rs}")
+                for _ in split_data:
+                    buffer = _+f'{NEWLINECHAR}{NEWLINECHAR}'
+                    
+                    if len(buffer) >= MIN_CHAR_LENGTH and len(buffer) <= MAX_CHAR_LENGTH:
+                        f.write(buffer+'\n')
+                        buffer = ""
+        
+        except (UnicodeDecodeError, UnicodeError):
+            exception_hits+=1
