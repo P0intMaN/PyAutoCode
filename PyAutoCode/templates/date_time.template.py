@@ -6,6 +6,8 @@ from datetime import datetime
 end_time = time.time()
 start_time = end_time - 86400
 
+# This template will access previous 3 days' data from github. Per day limits to 1000 repos
+# due to API limit.
 for i in range(3):
     start_time_str = datetime.utcfromtimestamp(start_time).strftime("%Y-%m-%d")
     end_time_str = datetime.utcfromtimestamp(end_time).strftime("%Y-%m-%d")
