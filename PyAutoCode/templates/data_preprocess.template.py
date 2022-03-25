@@ -27,6 +27,7 @@ for fpath in full_paths:
         print(f"{bg.grey}{fg.black} {data} {fg.rs}{bg.rs}")
         print(f'{fg.cyan}Total char length: {len(data)} {fg.rs}')
 
+#         formatted data
         formatted_data = data.replace("\n", NEWLINECHAR)
         print(f'\n{fg.yellow}Pre-processed Data:{fg.rs}')
         print(f"{bg.li_blue}{fg.black} {formatted_data} {bg.rs}{fg.rs}")
