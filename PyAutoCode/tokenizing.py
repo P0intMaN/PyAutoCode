@@ -1,5 +1,6 @@
 from sty import fg, rs, bg
 from tokenizers import ByteLevelBPETokenizer
+from transformers import GPT2Config, GPT2LMHeadModel, GPT2Tokenizer
 
 path = "PyAutoCode\\python_code_dataset.txt"
 exception_hits = 0
@@ -24,6 +25,15 @@ except (UnicodeDecodeError, UnicodeError):
 # save the model to disk
 tokenizer.save_model("PyAutoCode\\tokenizer")
 
-print(f"{fg.green}tokenizing completed...{fg.rs}")
-print(f"{fg.red}exception hits {exception_hits}{fg.rs}")
+# loading our own pre-trained tokenized model to train GPT2
+tokenizer = GPT2Tokenizer.from_pretrained('tokenizer')
+
+# let GPT know about the specialized tokens used during tokenizing
+tokenizer.add_special_tokens({
+    "eos_token": "</s>",
+    "bos_token": "<s>",
+    "unk_token": "<unk>",
+    "pad_token": "<pad>",
+    "mask_token": "<mask>"
+})
 
