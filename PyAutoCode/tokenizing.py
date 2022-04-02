@@ -26,7 +26,7 @@ except (UnicodeDecodeError, UnicodeError):
 tokenizer.save_model("PyAutoCode\\tokenizer")
 
 # loading our own pre-trained tokenized model to train GPT2
-tokenizer = GPT2Tokenizer.from_pretrained('tokenizer')
+tokenizer = GPT2Tokenizer.from_pretrained('PyAutoCode\\tokenizer')
 
 # let GPT know about the specialized tokens used during tokenizing
 tokenizer.add_special_tokens({
@@ -36,4 +36,3 @@ tokenizer.add_special_tokens({
     "pad_token": "<pad>",
     "mask_token": "<mask>"
 })
-
