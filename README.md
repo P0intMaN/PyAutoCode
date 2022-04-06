@@ -1,12 +1,11 @@
----
-license: mit
----
 
 # PyAutoCode: GPT-2 based Python auto-code.
 
 PyAutoCode is a cut-down python autosuggestion built on **GPT-2** *(motivation: GPyT)* model. This baby model *(trained only up to 3 epochs)* is not **"fine-tuned"** yet therefore, I highly recommend not to use it in a production environment or incorporate PyAutoCode in any of your projects. It has been trained on **112GB** of Python data sourced from the best crowdsource platform ever -- **GitHub**.
 
 *NOTE: Increased training and fine tuning would be highly appreciated and I firmly believe that it would improve the ability of PyAutoCode significantly.*
+
+> The model is published on [huggingface](https://huggingface.co/P0intMaN/PyAutoCode). You may go ahead and check it out!
 
 ## Some Model Features
 
