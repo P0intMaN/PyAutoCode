@@ -20,7 +20,7 @@ You can make use of the **Inference API** of huggingface *(present on the right 
 
 ## Usage
 
-You can use my model too!. Here's a quick tour of how you can achieve this:
+You can use this model too!. Here's a quick tour of how you can achieve this:
 
 Install transformers
 ```sh
