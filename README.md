@@ -14,6 +14,12 @@ PyAutoCode is a cut-down python autosuggestion built on **GPT-2** *(motivation: 
 - Data Sourced from *GitHub (almost 5 consecutive days of latest Python repositories)*
 - Makes use of *GPTLMHeadModel* and *DataCollatorForLanguageModelling* for training
 
+## Navigating this Code Repository
+
+If you want to directly run the model, then you can go ahead and execute `app.py`. But, be warned that the requirements of this program is not attached with the repo since requirements may vary based on the system GPUs and architecture.
+
+If you want to understand how this code is functioning, you can take a look at the **PyAutoCode > templates** folder for a descriptive explanation of each module / concept used.
+
 ## Get a Glimpse of the Model
 
 You can make use of the **Inference API** of huggingface *(present on the right sidebar)* to load the model and check the result. 
