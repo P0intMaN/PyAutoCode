@@ -13,3 +13,7 @@
 # NOTE: input: single line or multi-line. Highly recommended to use doc-strings.
 # inp = """import pandas"""
 #
+# format_inp = inp.replace('\n', "<N>")
+# tokenize_inp = tokenizer.encode(format_inp, return_tensors='pt')
+# result = model.generate(tokenize_inp)
+
