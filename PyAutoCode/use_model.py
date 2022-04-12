@@ -2,4 +2,12 @@
 # 
 #                                   OR
 # 
+# pip install transformers
+# 
+# from transformers import AutoTokenizer, AutoModelForCausalLM
+#
+# tokenizer = AutoTokenizer.from_pretrained("P0intMaN/PyAutoCode")
+#
+# model = AutoModelForCausalLM.from_pretrained("P0intMaN/PyAutoCode")
+#
 
