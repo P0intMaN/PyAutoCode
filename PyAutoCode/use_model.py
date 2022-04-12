@@ -10,4 +10,6 @@
 #
 # model = AutoModelForCausalLM.from_pretrained("P0intMaN/PyAutoCode")
 #
-
+# NOTE: input: single line or multi-line. Highly recommended to use doc-strings.
+# inp = """import pandas"""
+#
