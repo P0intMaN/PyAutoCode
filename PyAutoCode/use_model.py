@@ -16,4 +16,10 @@
 # format_inp = inp.replace('\n', "<N>")
 # tokenize_inp = tokenizer.encode(format_inp, return_tensors='pt')
 # result = model.generate(tokenize_inp)
-
+#
+# decode_result = tokenizer.decode(result[0])
+# format_result = decode_result.replace('<N>', "\n")
+#
+# printing the result
+# print(format_result)
+# 
