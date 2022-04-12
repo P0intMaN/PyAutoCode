@@ -24,6 +24,7 @@ for dirpath, dirnames, filenames in os.walk(walk_dir):
             else:
                 print(f"{fg.yellow} something is not right!! {fg.rs}")
                 warnings += 1
+                
 # checking if I am on the right track
 print(f"Python files: {py_files}")
 print(f"Warnings: {warnings}")
