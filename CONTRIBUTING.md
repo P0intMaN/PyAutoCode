@@ -14,7 +14,7 @@ So, here are a couple of resources to help you refresh / get started:
 
 ## Programming Language
 
-PyAutoCode relies on Python as its core language. So, inorder to make contributions, you are expected to know the basics of Python. [Here](https://www.youtube.com/playlist?list=PLbsliZj8JocIez5TvsbMaVKgF-sxoal0C) is a great playlist to start with.
+PyAutoCode relies on Python as its core language. It also makes use of machine learning (ML) concepts.So, inorder to make contributions, you are expected to know the basics of Python as well as ML. For Python, [this](https://www.youtube.com/playlist?list=PLbsliZj8JocIez5TvsbMaVKgF-sxoal0C) is a great playlist to start with. For machine learning concepts, refer this [website](https://www.tensorflow.org/tutorials)
 
 ## Non Technincal? No Problemo
 
