@@ -62,5 +62,3 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 ```
-## Credits
-##### *Developed as a part of a university project by [Pratheek U](https://www.github.com/P0intMaN) and [Sourav Singh](https://github.com/Sourav11902312lpu)*
